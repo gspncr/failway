@@ -2,7 +2,7 @@ import logging
 import threading
 import io
 import datetime as dt
-from flask import *
+from flask import Flask
 from urllib.request import urlopen as uReq
 from bs4 import BeautifulSoup as soup
 
