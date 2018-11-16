@@ -5,7 +5,6 @@ import datetime as dt
 from flask import *
 from urllib.request import urlopen as uReq
 from bs4 import BeautifulSoup as soup
-from oneagent.sdk import SDK, ChannelType, Channel
 
 app = Flask(__name__)
 logging.basicConfig(filename='trc.log',level=logging.INFO,format='%(asctime)s %(message)s')
