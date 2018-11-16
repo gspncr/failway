@@ -121,8 +121,8 @@ def page_not_found(e):
 def page_not_found(e):
     return render_template('500.html'), 503
 
-#if __name__ == '__main__':
-#    app.run(host='localhost', port=8070)
-
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=80)
+    app.run(host='localhost', port=80)
+
+#if __name__ == '__main__':
+#    app.run(host='0.0.0.0', port=80)
