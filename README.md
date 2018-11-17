@@ -1,3 +1,5 @@
+[![Build status](https://dynatracegary.visualstudio.com/Failway/_apis/build/status/Failway-Docker%20container-CI)](https://dynatracegary.visualstudio.com/Failway/_build/latest?definitionId=1)
+
 # failway
 Frontend for tracking the schedule of a train route from National Rail. 
 
