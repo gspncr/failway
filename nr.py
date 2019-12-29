@@ -6,7 +6,7 @@ from flask import Flask, request, render_template
 from urllib.request import urlopen as uReq
 from bs4 import BeautifulSoup as soup
 
-app = Flask(__name__)
+application = Flask(__name__)
 logging.basicConfig(filename='trc.log',level=logging.INFO,format='%(asctime)s %(message)s')
 
 timeHour = dt.datetime.now().hour
@@ -97,32 +97,32 @@ def writeDelays(train, status):
         file.writelines(status)
         file.writelines('\n')
 
-@app.route('/', methods=["GET"])
+@application.route('/', methods=["GET"])
 def index():
     return render_template("layout.html", train = trains, url=my_url, session=hour)
 
-@app.route('/about/')
+@application.route('/about/')
 def about():
     return '<a href="/">return home</a><br>hi, this is a quick something by gary spencer <a href="http://twitter.com/gspncr">@gspncr</a>'
 
-@app.route('/batch/', methods=['GET'])
+@application.route('/batch/', methods=['GET'])
 def metrics():
     return redirect('static/batch.txt')
 
-@app.errorhandler(404)
+@application.errorhandler(404)
 def page_not_found(e):
     return render_template('404.html'), 404
 
-@app.errorhandler(500)
+@application.errorhandler(500)
 def page_not_found(e):
     return render_template('500.html'), 500
 
-@app.errorhandler(503)
+@application.errorhandler(503)
 def page_not_found(e):
     return render_template('500.html'), 503
 
 #if __name__ == '__main__':
-#    app.run(host='localhost', port=80)
+#    application.run(host='localhost', port=80)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=80)
+    application.run(host='0.0.0.0', port=80)
